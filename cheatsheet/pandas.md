@@ -154,3 +154,56 @@ df['department'] = np.where(
     np.where(missing, 'Admin', df['department'])
 )
 
+## Cheat Sheet — Part 10: Dates & Time Series
+
+- **`pd.to_datetime()`** — convert string column to datetime
+```python
+df['date'] = pd.to_datetime(df['date'], errors='coerce')
+```
+
+- **`.dt.year / .dt.month / .dt.day`** — extract date parts
+```python
+df['year'] = df['date'].dt.year
+df['month'] = df['date'].dt.month
+```
+
+- **`.dt.day_name()`** — extract day name
+```python
+df['day_name'] = df['date'].dt.day_name()  # 'Monday', 'Tuesday'...
+```
+
+- **`.dt.quarter`** — extract quarter number
+```python
+df['quarter'] = df['date'].dt.quarter  # 1, 2, 3, or 4
+```
+
+- **Date range filter** — filter between two dates
+```python
+filt = (df['date'] >= '2024-03-01') & (df['date'] <= '2024-06-30')
+df = df[filt].reset_index(drop=True)
+```
+
+- **`df.set_index('date')`** — set date as index (required for resample)
+```python
+df = df.set_index('date')
+```
+
+- **`.resample()`** — group by time period (requires date index)
+```python
+df.resample('ME').sum()   # monthly
+df.resample('QE').sum()   # quarterly
+df.resample('Y').sum()    # yearly
+```
+
+- **`.resample()` + named agg** — professional summary by period
+```python
+df.resample('QE').agg(
+    total_revenue=('revenue', 'sum'),
+    avg_units=('units_sold', 'mean')
+).reset_index()
+```
+
+- **`pd.date_range()`** — generate a sequence of dates
+```python
+pd.date_range(start='2024-01-01', periods=12, freq='ME')
+```
