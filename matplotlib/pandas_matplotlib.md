@@ -1,4 +1,4 @@
-# 📊 Pandas + Matplotlib — Complete Reference
+# Pandas + Matplotlib — Complete Reference
 
 ---
 
