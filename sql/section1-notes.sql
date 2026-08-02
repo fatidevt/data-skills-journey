@@ -1,3 +1,4 @@
+-- SELECT + WHERE + GROUP BY + ORDER BY + HAVING + LIMIT + ALIASING
 -- SELECT Statement
 SELECT 
 first_name,
