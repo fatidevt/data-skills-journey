@@ -1,6 +1,7 @@
 select * from employee_demographics;
 select * from employee_salary;
--- unuion by default use distinct
+
+-- union by default use distinct
 select first_name, last_name from employee_demographics
 union all
 select first_name, last_name from employee_salary;
