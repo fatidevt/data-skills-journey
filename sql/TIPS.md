@@ -1,5 +1,4 @@
--- TIPS
-/*
+
 Always Map Before You Type
 
 Before touching the keyboard, ask yourself these 5 questions in order:
@@ -10,4 +9,5 @@ Before touching the keyboard, ask yourself these 5 questions in order:
 4. Do I need to group?           → GROUP BY
 5. Do I need to filter groups?   → HAVING + ORDER BY + LIMIT
 
-*/
+Query order of execution : 
+FROM & JOIN => WHERE => GROUP BY => HAVING => SELECT => DISTINCT => ORDER BY => LIMIT
