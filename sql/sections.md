@@ -6,4 +6,6 @@ Session 3 → String Functions + CASE + Subqueries
 
 Session 4 → Window Functions + CTEs + Temp Tables
 
-Session 5 → Data Cleaning Project + EDA Project
+Session 5 → Date and Time Functions + NULL Functions + Case Statement
+
+Session 6 → Data Cleaning Project + EDA Project
